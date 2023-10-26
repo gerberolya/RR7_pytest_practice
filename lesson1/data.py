@@ -1,6 +1,8 @@
 
-MAIN_PAGE_URL = "https://www.saucedemo.com/"
-PRODUCT_LIST_URL = "https://www.saucedemo.com/inventory.html"
+# URL's
+MAIN_PAGE = "https://www.saucedemo.com/"
+PRODUCT_LIST = "https://www.saucedemo.com/inventory.html"
+CHECKOUT_PAGE = 'https://www.saucedemo.com/cart.html'
 
 # authorisation data
 

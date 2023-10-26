@@ -1,28 +1,27 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from data import *
+from locators import *
+
 
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome()
-    driver.get("https://www.saucedemo.com/")
-    driver.implicitly_wait(2)
+    driver.get(MAIN_PAGE)
+    driver.implicitly_wait(5)
     yield driver
     driver.quit()
 
+
 @pytest.fixture
 def login(driver):
-    username_field = driver.find_element(By.XPATH, '//input[@data-test="username"]')
-    username_field.send_keys("standard_user")
-
-    password_field = driver.find_element(By.XPATH, '//input[@data-test="password"]')
-    password_field.send_keys("secret_sauce")
-
-    login_button = driver.find_element(By.XPATH, '//input[@data-test="login-button"]')
-    login_button.click()
+    driver.find_element(By.XPATH, USERNAME).send_keys(CORRECT_LOGIN)
+    driver.find_element(By.XPATH, PASSWORD).send_keys(CORRECT_PASSWORD)
+    driver.find_element(By.XPATH, LOGIN_BUTTON).click()
 
 
 @pytest.fixture
 def cart_with_item(driver, login):
     driver.find_element(By.XPATH, '//*[@id="add-to-cart-sauce-labs-backpack"]').click()
-    driver.get('https://www.saucedemo.com/cart.html')
+    driver.get(CHECKOUT_PAGE)
