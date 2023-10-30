@@ -2,10 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time 
 
-driver = webdriver.Chrome()
+# driver = webdriver.Chrome()
 
 
-def test_load_button_without_wait():
+def test_load_button_without_wait(driver):
     driver.get("https://victoretc.github.io/waitSeleniumexample/")
 
     load_content_button = driver.find_element(By.XPATH, "//button")
@@ -16,7 +16,7 @@ def test_load_button_without_wait():
     assert welcome_message.text == "Welcome to the Unstable Load Site!"
 
 
-def test_load_with_wait():
+def test_load_with_wait(driver):
     driver.get("https://victoretc.github.io/waitSeleniumexample/")
 
     load_content_button = driver.find_element(By.XPATH, "//button")
