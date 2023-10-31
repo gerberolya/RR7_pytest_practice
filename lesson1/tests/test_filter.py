@@ -3,7 +3,7 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
-from locators import FILTER
+from lesson1.locators.product_page_locators import FILTER
 
 
 def test_filter_a_to_z(driver, login):

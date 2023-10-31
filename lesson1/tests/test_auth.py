@@ -1,7 +1,9 @@
 import time
 
 from selenium.webdriver.common.by import By
-from locators import USERNAME, PASSWORD, LOGIN_BUTTON
+
+from lesson1.data.auth_data import PRODUCT_LIST, CORRECT_LOGIN, CORRECT_PASSWORD, INCORRECT_LOGIN, INCORRECT_PASSWORD
+from lesson1.locators.main_page_locators import USERNAME, PASSWORD, LOGIN_BUTTON
 from data import *
 
 
