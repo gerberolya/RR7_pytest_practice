@@ -24,12 +24,12 @@ def test_remove_item_from_the_cart(driver, login):
     remove_button_cart = driver.find_element(By.XPATH, '//button[@data-test="remove-sauce-labs-backpack"]')
     remove_button_cart.click()
 
-    try:
-        driver.find_element(By.XPATH, '//div[@class="cart_item_label"]')
-        assert False, 'There are items in the cart'
-    except NoSuchElementException:
-        assert True
-    # assert driver.find_elements(By.XPATH, '//div[@class="removed_cart_item"]')
+    # try:
+    #     driver.find_element(By.XPATH, '//div[@class="cart_item_label"]')
+    #     assert False, 'There are items in the cart'
+    # except NoSuchElementException:
+    #     assert True
+    assert driver.find_element(By.XPATH, '//div[@class="removed_cart_item"]').is_enabled() # is_displayed - тест упадет
 
 def test_remove_item_from_the_cart_list(driver, login):
     random_items = driver.find_elements(By.CSS_SELECTOR, 'button.btn_inventory')
