@@ -1,0 +1,1 @@
+URL_LUMA = 'https://magento.softwaretestingboard.com'

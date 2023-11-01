@@ -1,0 +1,5 @@
+CORRECT_LOGIN = 'jhgj@olm.hj'
+CORRECT_PASSWORD = '7P@G@xcMYRezL5U'
+
+# INCORRECT_LOGIN = "user"
+# INCORRECT_PASSWORD = "user"
